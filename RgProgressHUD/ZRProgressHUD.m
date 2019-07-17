@@ -44,6 +44,8 @@ static NSInteger x_max_hud_showTime = 20;
         }
         hud.completionBlock = hideComplete;
         hud.mode = MBProgressHUDModeText;
+        hud.label.numberOfLines = 0;
+        hud.label.lineBreakMode = NSLineBreakByWordWrapping;
         hud.label.text = tip;
         [hud hideAnimated:true afterDelay:delay];
     });
@@ -68,6 +70,8 @@ static NSInteger x_max_hud_showTime = 20;
         }
         hud.completionBlock = hideComplete;
         hud.mode = MBProgressHUDModeText;
+        hud.label.numberOfLines = 0;
+        hud.label.lineBreakMode = NSLineBreakByWordWrapping;
         hud.label.text = tip;
         [hud hideAnimated:true afterDelay:delay];
     });
