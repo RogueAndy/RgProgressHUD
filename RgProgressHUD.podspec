@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
 
   s.frameworks = "UIKit", "Foundation"
   s.requires_arc = true
-  s.dependency "MBProgressHUD", "1.1.0"
+  s.dependency "MBProgressHUD", "1.2.0"
 end

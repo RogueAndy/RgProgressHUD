@@ -3,6 +3,6 @@
 
 target 'RgProgressHUDDemo' do
   
-  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'MBProgressHUD', '~> 1.2.0'
 
 end
