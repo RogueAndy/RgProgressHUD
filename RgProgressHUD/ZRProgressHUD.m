@@ -14,11 +14,14 @@ static NSInteger x_max_hud_showTime = 20;
 
 @implementation ZRProgressHUD
 
-+ (void)showLoading:(UIViewController *)viewController {
++ (void)showLoading:(UIViewController * _Nullable)viewController {
     [self showLoadingComplete:viewController hideComplete:nil];
 }
 
-+ (void)showLoadingComplete:(UIViewController *)viewController hideComplete:(nullable void (^)(void))hideComplete {
++ (void)showLoadingComplete:(UIViewController * _Nullable)viewController hideComplete:(nullable void (^)(void))hideComplete {
+    if(!viewController) {
+        return;
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [viewController.view viewWithTag:x_hud_viewController_tag_value];
         if(!hud) {
@@ -29,11 +32,14 @@ static NSInteger x_max_hud_showTime = 20;
     });
 }
 
-+ (void)showTips:(UIViewController *)viewController tip:(NSString *)tip delay:(float)delay {
++ (void)showTips:(UIViewController * _Nullable)viewController tip:(NSString * _Nullable)tip delay:(float)delay {
     [self showTipsComplete:viewController tip:tip delay:delay hideComplete:nil];
 }
 
-+ (void)showTipsComplete:(UIViewController *)viewController tip:(NSString *)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete {
++ (void)showTipsComplete:(UIViewController * _Nullable)viewController tip:(NSString * _Nullable)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete {
+    if(!viewController) {
+        return;
+    }
     tip = tip ? tip : @"";
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [viewController.view viewWithTag:x_hud_viewController_tag_value];
@@ -51,11 +57,11 @@ static NSInteger x_max_hud_showTime = 20;
     });
 }
 
-+ (void)showMessageOnWindow:(NSString *)tip delay:(float)delay {
++ (void)showMessageOnWindow:(NSString * _Nullable)tip delay:(float)delay {
     [self showMessageOnWindowComplete:tip delay:delay hideComplete:nil];
 }
 
-+ (void)showMessageOnWindowComplete:(NSString *)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete {
++ (void)showMessageOnWindowComplete:(NSString * _Nullable)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete {
     tip = tip ? tip : @"";
     dispatch_async(dispatch_get_main_queue(), ^{
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -77,7 +83,10 @@ static NSInteger x_max_hud_showTime = 20;
     });
 }
 
-+ (void)hideLoading:(UIViewController *)viewController {
++ (void)hideLoading:(UIViewController * _Nullable)viewController {
+    if(!viewController) {
+        return;
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [viewController.view viewWithTag:x_hud_viewController_tag_value];
         if(hud) {

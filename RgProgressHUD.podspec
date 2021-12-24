@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RgProgressHUD"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "是用户提示组件，基于MBProgressHUD封装"
   s.description  = <<-DESC
                     用户提示组件，基于MBProgressHUD封装

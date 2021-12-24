@@ -14,19 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZRProgressHUD : NSObject
 
-+ (void)showLoading:(UIViewController *)viewController;
++ (void)showLoading:(UIViewController * _Nullable)viewController;
 
-+ (void)showLoadingComplete:(UIViewController *)viewController hideComplete:(nullable void (^)(void))hideComplete;
++ (void)showLoadingComplete:(UIViewController * _Nullable)viewController hideComplete:(nullable void (^)(void))hideComplete;
 
-+ (void)showTips:(UIViewController *)viewController tip:(NSString *)tip delay:(float)delay;
++ (void)showTips:(UIViewController * _Nullable)viewController tip:(NSString * _Nullable)tip delay:(float)delay;
 
-+ (void)showTipsComplete:(UIViewController *)viewController tip:(NSString *)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete;
++ (void)showTipsComplete:(UIViewController * _Nullable)viewController tip:(NSString * _Nullable)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete;
 
-+ (void)showMessageOnWindow:(NSString *)tip delay:(float)delay;
++ (void)showMessageOnWindow:(NSString * _Nullable)tip delay:(float)delay;
 
-+ (void)showMessageOnWindowComplete:(NSString *)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete;
++ (void)showMessageOnWindowComplete:(NSString * _Nullable)tip delay:(float)delay hideComplete:(nullable void (^)(void))hideComplete;
 
-+ (void)hideLoading:(UIViewController *)viewController;
++ (void)hideLoading:(UIViewController * _Nullable)viewController;
 
 @end
 
